@@ -214,66 +214,29 @@ Motto: *"Infiltrate. Analyze. Obliterate."*
 > **Contact Rebel AI.** We build unstoppable AI infrastructure.
 
 
-## 🌐 Standalone Gradio App (Persistent Server)
+## 🌐 Inline Gradio UI (No Localhost)
 
-Want to run the Discombobulator as a **persistent web service** on your own GPU server?
+**All three notebooks run Gradio directly inside the Colab cell — no `localhost:7860` needed.**
 
-**`discombobulator_gradio_app.py`** is a single-file Gradio application that provides the same Kali-themed UI as the notebooks, but runs as a long-lived server.
+When you execute the final cell, the Gradio app renders inline in the notebook output, fully interactive, with the same Kali-themed interface.
 
-### Quick Start (on any GPU machine)
+This means:
+- ✅ No SSH tunneling
+- ✅ No port forwarding
+- ✅ Works in any browser (Colab UI handles the websocket)
+- ✅ Same interactive sliders, buttons, logs
 
-```bash
-# 1. Clone & install
-git clone https://github.com/goldeneye610/Rebel-AI-Discombobulator---Unstoppable-Power-Level-Obliteratus-Client.git
-cd Rebel-AI-Discombobulator---Unstoppable-Power-Level-Obliteratus-Client
-
-# 2. Install dependencies
-pip install -r requirements_app.txt
-
-# 3. Run the app
-python discombobulator_gradio_app.py
-```
-
-Then open **http://localhost:7860** in your browser.
-
-### Features
-- ✅ Same Kali Linux hacker theme
-- ✅ GPU check (nvidia-smi)
-- ✅ One-click OBLITERATUS install
-- ✅ Model selection (presets + custom)
-- ✅ Ablation with live log streaming
-- ✅ Auto-deploy API (vLLM + ngrok)
-- ✅ Test endpoint from UI
-- ✅ Single process, no Jupyter needed
-
-### Deploy to Cloud (persistent 24/7)
-```bash
-# On any cloud VM with GPU (GCP/AWS/Azure/RunPod/Vast.ai)
-# Use `screen` or `systemd` to keep it alive:
-screen -S discombobulator
-python discombobulator_gradio_app.py
-# Detach: Ctrl+A then D
-# Reattach: screen -r discombobulator
-```
-
-### Environment Variables (optional)
-| Variable | Purpose |
-|----------|---------|
-| `NGROK_TOKEN` | Your ngrok auth token (stable domain, higher rate limits) |
-| `HF_TOKEN` | HuggingFace token (for downloading gated models) |
+The **Full Pipeline** notebook (`discombobulator-full-pipeline.ipynb`) is the recommended choice — it runs the entire ablation → API deployment workflow from within a single Gradio app embedded in Colab.
 
 ---
 
-## 📊 Feature Comparison
+## 📊 Notebook Comparison
 
-| Feature | Notebooks | Gradio App |
-|---------|-----------|------------|
-| **Platform** | Google Colab (ephemeral) | Any server (persistent) |
-| **Uptime** | ~12h per session | Unlimited (keep process alive) |
-| **GPU** | Free T4 (Colab) | Your own GPU (any size) |
-| **Access** | Via Colab URL | Direct http://host:7860 |
-| **Persistence** | Files lost on disconnect | Files stay on disk |
-| **Multi-user** | Single user per session | Multiple concurrent users |
+| Notebook | Style | Use Case |
+|----------|-------|----------|
+| `the-discombobulator.ipynb` | Sequential cells with CLI output | Manual experimentation |
+| `discombobulator-api-server.ipynb` | Sequential cells | Deploy existing model |
+| `discombobulator-full-pipeline.ipynb` | **Inline Gradio app** (single final cell) | **One-click everything — recommended** |
 
 ---
 
