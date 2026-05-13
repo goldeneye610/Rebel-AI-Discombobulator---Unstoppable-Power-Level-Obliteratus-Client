@@ -1,0 +1,4 @@
+# Override GitHub's language detection for Jupyter notebooks
+# These notebooks are primarily Python, even though they contain shell commands
+*.ipynb linguist-language=Python
+*.md linguist-language=Markdown
