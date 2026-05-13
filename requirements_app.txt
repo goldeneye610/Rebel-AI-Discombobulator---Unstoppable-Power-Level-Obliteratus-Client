@@ -1,7 +1,0 @@
-gradio>=5.0,<6.0
-obliteratus
-vllm>=0.4.0
-pyngrok
-fastapi
-uvicorn[standard]
-requests
