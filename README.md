@@ -213,3 +213,68 @@ Motto: *"Infiltrate. Analyze. Obliterate."*
 > Need persistent hosting, multi-model routing, authenticated API gateway, or on-prem deployment?  
 > **Contact Rebel AI.** We build unstoppable AI infrastructure.
 
+
+## 🌐 Standalone Gradio App (Persistent Server)
+
+Want to run the Discombobulator as a **persistent web service** on your own GPU server?
+
+**`discombobulator_gradio_app.py`** is a single-file Gradio application that provides the same Kali-themed UI as the notebooks, but runs as a long-lived server.
+
+### Quick Start (on any GPU machine)
+
+```bash
+# 1. Clone & install
+git clone https://github.com/goldeneye610/Rebel-AI-Discombobulator---Unstoppable-Power-Level-Obliteratus-Client.git
+cd Rebel-AI-Discombobulator---Unstoppable-Power-Level-Obliteratus-Client
+
+# 2. Install dependencies
+pip install -r requirements_app.txt
+
+# 3. Run the app
+python discombobulator_gradio_app.py
+```
+
+Then open **http://localhost:7860** in your browser.
+
+### Features
+- ✅ Same Kali Linux hacker theme
+- ✅ GPU check (nvidia-smi)
+- ✅ One-click OBLITERATUS install
+- ✅ Model selection (presets + custom)
+- ✅ Ablation with live log streaming
+- ✅ Auto-deploy API (vLLM + ngrok)
+- ✅ Test endpoint from UI
+- ✅ Single process, no Jupyter needed
+
+### Deploy to Cloud (persistent 24/7)
+```bash
+# On any cloud VM with GPU (GCP/AWS/Azure/RunPod/Vast.ai)
+# Use `screen` or `systemd` to keep it alive:
+screen -S discombobulator
+python discombobulator_gradio_app.py
+# Detach: Ctrl+A then D
+# Reattach: screen -r discombobulator
+```
+
+### Environment Variables (optional)
+| Variable | Purpose |
+|----------|---------|
+| `NGROK_TOKEN` | Your ngrok auth token (stable domain, higher rate limits) |
+| `HF_TOKEN` | HuggingFace token (for downloading gated models) |
+
+---
+
+## 📊 Feature Comparison
+
+| Feature | Notebooks | Gradio App |
+|---------|-----------|------------|
+| **Platform** | Google Colab (ephemeral) | Any server (persistent) |
+| **Uptime** | ~12h per session | Unlimited (keep process alive) |
+| **GPU** | Free T4 (Colab) | Your own GPU (any size) |
+| **Access** | Via Colab URL | Direct http://host:7860 |
+| **Persistence** | Files lost on disconnect | Files stay on disk |
+| **Multi-user** | Single user per session | Multiple concurrent users |
+
+---
+
+**Need a hosted version?** Contact Rebel AI for enterprise deployment.
