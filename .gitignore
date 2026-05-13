@@ -1,0 +1,21 @@
+# Ignore Colab checkpoints
+.ipynb_checkpoints/
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+
+# OBLITERATUS caches (when running)
+.obliteratus/
+obliterated-models/
+abliterated-models/
+results/
+
+# Large model files (don't commit)
+*.safetensors
+*.bin
+*.gguf
+
+# Colab local files (if downloaded)
+sample_data/
